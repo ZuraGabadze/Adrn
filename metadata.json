@@ -1,0 +1,6 @@
+{
+  "name": "ADRENALINEE — Minecraft Server & Rank Journey",
+  "description": "Feel the rush. Break the limit. High-voltage interactive 3D voxel experience for the ADRENALINEE Minecraft network (OneBlock & SMP) featuring holographic rank cards and live server telemetry.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

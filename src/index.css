@@ -1,0 +1,225 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Pixelify Sans', 'Noto Sans Georgian', sans-serif;
+  --font-display: 'Pixelify Sans', 'Silkscreen', 'Noto Sans Georgian', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Pixelify Sans', 'Noto Sans Georgian', monospace;
+}
+
+@layer base {
+  :root {
+    --bg-void: #05030b;
+    --bg-deep: #0b0618;
+    --mc-emerald: #25FF57;
+    --mc-amethyst: #8C6CFF;
+    --mc-sapphire: #008DFF;
+    --mc-ruby: #FF0000;
+    --mc-obsidian: #46497A;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    background-color: #05030b;
+    color: #ffffff;
+    font-family: 'Pixelify Sans', 'Noto Sans Georgian', sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #05030b;
+    overflow-x: hidden;
+  }
+}
+
+.font-pixel-title {
+  font-family: 'Silkscreen', 'Pixelify Sans', 'Noto Sans Georgian', monospace;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.85);
+}
+
+.font-display {
+  font-family: 'Pixelify Sans', 'Silkscreen', 'Noto Sans Georgian', sans-serif;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.85);
+}
+
+.font-mc-chat,
+.font-pixel {
+  font-family: 'VT323', 'Pixelify Sans', 'Noto Sans Georgian', sans-serif;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.85);
+  letter-spacing: 0.02em;
+}
+
+.font-mono-code,
+.font-mono {
+  font-family: 'JetBrains Mono', 'Noto Sans Georgian', sans-serif;
+  font-variant-numeric: tabular-nums;
+}
+
+
+.pixelated {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+.mc-text-shadow {
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.85);
+}
+
+/* Authentic Minecraft GUI Bevel Panels & Buttons */
+.mc-panel {
+  background-color: #161321;
+  border: 3px solid #05030b;
+  box-shadow:
+    inset 3px 3px 0px rgba(255, 255, 255, 0.14),
+    inset -3px -3px 0px rgba(0, 0, 0, 0.65),
+    0 8px 0 rgba(0, 0, 0, 0.5);
+}
+
+.mc-panel-dark {
+  background-color: #0b0914;
+  border: 3px solid #040208;
+  box-shadow:
+    inset 2px 2px 0px rgba(255, 255, 255, 0.1),
+    inset -2px -2px 0px rgba(0, 0, 0, 0.75);
+}
+
+/* Classic Inventory Slot (dark sunken bevel) */
+.mc-slot {
+  background-color: #1c1829;
+  border: 2px solid #09070f;
+  box-shadow:
+    inset 2px 2px 0px rgba(0, 0, 0, 0.75),
+    inset -2px -2px 0px rgba(255, 255, 255, 0.12);
+}
+
+.mc-slot-active {
+  background-color: #2a243d;
+  border: 2px solid #ffffff;
+  box-shadow:
+    inset 2px 2px 0px rgba(0, 0, 0, 0.75),
+    inset -2px -2px 0px rgba(255, 255, 255, 0.25),
+    0 0 12px rgba(255, 255, 255, 0.35);
+}
+
+/* Classic Stone Bevel Button */
+.mc-btn {
+  background-color: #3a354c;
+  border: 2px solid #05030b;
+  box-shadow:
+    inset 2px 2px 0px rgba(255, 255, 255, 0.28),
+    inset -2px -2px 0px rgba(0, 0, 0, 0.55);
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.85);
+  transition: transform 0.06s steps(2), background-color 0.1s ease;
+}
+
+.mc-btn:hover:not(:disabled) {
+  background-color: #4f4869;
+  border-color: #ffffff;
+}
+
+.mc-btn:active:not(:disabled) {
+  transform: translateY(2px);
+  box-shadow:
+    inset 2px 2px 0px rgba(0, 0, 0, 0.65),
+    inset -1px -1px 0px rgba(255, 255, 255, 0.15);
+}
+
+/* Minecraft Item Lore Tooltip (#100010 background, #2a0a5e border) */
+.mc-lore-tooltip {
+  background-color: rgba(16, 0, 16, 0.96);
+  border: 2px solid #2a0a5e;
+  box-shadow:
+    0 0 0 2px #100010,
+    inset 0 0 0 1px rgba(140, 108, 255, 0.25),
+    0 10px 24px rgba(0, 0, 0, 0.85);
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.9);
+}
+
+/* Enchantment Glint Shimmer */
+@keyframes enchant-scroll {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 200% 200%;
+  }
+}
+
+.enchant-glint {
+  background-image: linear-gradient(
+    115deg,
+    transparent 20%,
+    rgba(168, 85, 247, 0.18) 36%,
+    rgba(232, 121, 249, 0.34) 45%,
+    rgba(168, 85, 247, 0.18) 54%,
+    transparent 70%
+  );
+  background-size: 200% 200%;
+  animation: enchant-scroll 4.5s linear infinite;
+}
+
+/* Splash text pulse */
+@keyframes splash-pulse {
+  0%, 100% {
+    transform: rotate(-14deg) scale(1);
+  }
+  50% {
+    transform: rotate(-14deg) scale(1.08);
+  }
+}
+
+.mc-splash {
+  animation: splash-pulse 1.1s ease-in-out infinite;
+  text-shadow: 2px 2px 0px #3f3f00;
+}
+
+/* 3D Card flip utilities */
+.perspective-1200 {
+  perspective: 1200px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* Konami Overload Shake */
+@keyframes overload-shake {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(-4px, 2px); }
+  50% { transform: translate(4px, -2px); }
+  75% { transform: translate(-3px, -2px); }
+}
+
+.overload-active {
+  animation: overload-shake 0.22s infinite;
+}
+
+/* Custom Pixel Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #080610;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2e2942;
+  border: 2px solid #080610;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #25FF57;
+}
